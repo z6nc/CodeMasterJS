@@ -1,0 +1,41 @@
+---
+import { ObjetoPractica } from "../../js/ObjetoPractica"
+---
+
+
+{
+ObjetoPractica.map((practica) => (
+    <section class="flex flex-col  bg-white py-7 px-7 rounded shadow-sm">
+        <div class=" w-[40%]">
+        <h2 class="font-lapizTitulo text-3xl mb-3 font-bold  ">{practica.NumeroEjercicio} : {practica.nombre}</h2>
+        </div>
+        <p class="font-lapizTexto text-[17px] py-2 text-gray-500">
+            {practica.descripcion}
+        </p>
+        <div class="py-4">
+            <h3 class="font-bold font-lapizTitulo text-2xl">Restricciones :</h3>
+            <ul class="font-lapizTexto list-disc text-[17px]  text-gray-500 mx-6">
+                {
+                    practica.restricciones.map((restriccion) => (
+                        <li class="py-1">{restriccion}</li>
+                    ))
+                }
+                
+            </ul>
+        </div>
+        <pre class="bg-white"><code class="language-js ">
+            {practica.CasosPrueba}
+        </code>
+       </pre>
+        
+        <div class="flex justify-center py-3">
+            <button class="bg-[#efd81d] hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded">
+                Ver respuesta
+            </button>
+        </div>
+    </section>
+))}
+
+
+
+

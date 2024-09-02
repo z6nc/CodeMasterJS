@@ -19,13 +19,13 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-[#f5f5f5]">
+	<body>
 		<slot />
 	</body>
 </html>
 <style is:global>
 	body{
-		background-color: white;
+		background-image: url("https://aprendejavascript.org/assets/bg-circuit.svg");
 	}
 
 </style>

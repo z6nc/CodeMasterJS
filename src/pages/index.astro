@@ -4,16 +4,24 @@ import Navbar from '../components/navbar.astro';
 import Titulo from '../components/SectionMain/Titulo.astro';
 import Principal from '../components/SectionMain/Principal.astro';
 import Subtitulo from '../components/SectionMain/Subtitulo.astro';
+
 ---
 
 <Layout title="Ejercicios Javascript">
-	<header class="w-full font-lapizTexto bg-transparent shadow-md flex  text-center items-center justify-between px-9 py-5 ">
-		<img class="  border-[1px] border-black  transition-all ease-in-out duration-75 hover:scale-105  rounded-lg hover:shadow-sm hover:shadow-black " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7wnhfNI2OH744CZjlwlUXdgVRDKnuJJNLlw&s" width="40px" alt="">
+	<header class="  bg-white w-full font-lapizTexto bg-transparent shadow-md flex  text-center items-center justify-between px-9 py-5 ">
+		<img class=" animate-fade-in border-[1px] border-black  transition-all ease-in-out duration-75 hover:scale-105  rounded-lg hover:shadow-sm hover:shadow-black " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7wnhfNI2OH744CZjlwlUXdgVRDKnuJJNLlw&s" width="40px" alt="">
 		<Navbar />
 	</header>
-	<main class=" max-w-5xl m-auto ">
-		<Titulo />
-		<Subtitulo />
+	<main class=" flex flex-col gap-6    max-w-5xl m-auto  my-5">
+		<section class="bg-white text-center rounded-sm shadow-md px-2">
+			<Titulo />
+			<Subtitulo />
+			
+			<button class="">Comenzemos</button>
+			
+		</section>
+	
+
 		<section class="flex justify-center flex-col gap-9">
 			<Principal />
 		</section>

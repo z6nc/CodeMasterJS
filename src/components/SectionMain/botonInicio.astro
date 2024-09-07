@@ -1,0 +1,35 @@
+<div id="butonComenzar" class="text-center flex justify-center flex-col">
+    <h3 class="">Comenzemos</h3>
+    <div class=" divbuttom">
+        <svg  class="mx-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="m12 15.586-4.707-4.707a1 1 0 0 0-1.414 1.414l5.293 5.293a.996.996 0 0 0 1.414 0l5.293-5.293a1 1 0 0 0-1.414-1.414L12 15.586z"/></svg>
+    </div>
+</div>   	
+
+<style>
+	.divbuttom{
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  border: 1px solid rgb(156, 154, 154);
+  border-radius: 9px;
+  height: 50px;
+  padding: 2px 3px;
+  overflow: hidden;
+}
+.divbuttom svg{
+	cursor: pointer;
+	border-radius: 40%;
+  	outline: none; /* Quita el borde al enfocar */
+    position: relative; /* Importante para animar la posición */
+    animation: moveButon 2s ease-in-out infinite; 
+}
+@keyframes moveButon {
+  0%, 100% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(100%); /* Sube 10px a la mitad de la animación */
+    }
+}
+</style>
+
+

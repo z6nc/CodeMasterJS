@@ -4,6 +4,7 @@ import Navbar from '../components/navbar.astro';
 import Titulo from '../components/SectionMain/Titulo.astro';
 import Principal from '../components/SectionMain/Principal.astro';
 import Subtitulo from '../components/SectionMain/Subtitulo.astro';
+import BotonInicio from '../components/SectionMain/botonInicio.astro';
 
 ---
 
@@ -13,16 +14,10 @@ import Subtitulo from '../components/SectionMain/Subtitulo.astro';
 		<Navbar />
 	</header>
 	<main class=" flex flex-col gap-6    max-w-5xl m-auto  my-5">
-		<section class=" text-center rounded-sm  px-2 h-[90vh]">
+		<section class=" text-center rounded-sm   px-2 h-[90vh]">
 			<Titulo />
 			<Subtitulo />
-			<div class="text-center flex justify-center flex-col">
-			    <button class="">Comenzemos</button>
-				<svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="m12 15.586-4.707-4.707a1 1 0 0 0-1.414 1.414l5.293 5.293a.996.996 0 0 0 1.414 0l5.293-5.293a1 1 0 0 0-1.414-1.414L12 15.586z"/></svg>
-			</div>
-			
-			  
-			
+			<BotonInicio />
 		</section>
 	
 
@@ -32,9 +27,4 @@ import Subtitulo from '../components/SectionMain/Subtitulo.astro';
 	
 	</main>
 </Layout>
-
-<style>
-
-</style>
-
 

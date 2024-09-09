@@ -5,7 +5,6 @@ import Titulo from '../components/SectionMain/Titulo.astro';
 import Principal from '../components/SectionMain/Principal.astro';
 import Subtitulo from '../components/SectionMain/Subtitulo.astro';
 import BotonInicio from '../components/SectionMain/botonInicio.astro';
-
 ---
 
 <Layout title="Ejercicios Javascript">
@@ -13,7 +12,7 @@ import BotonInicio from '../components/SectionMain/botonInicio.astro';
 		<Navbar />
 	</header>
 	<main class=" flex flex-col gap-6  max-w-5xl mx-auto ">
-		<section class="  text-center  rounded-sm  px-2 ">
+		<section class="  text-center  rounded-sm  px-2  mb-32">
 			<Titulo />
 			<Subtitulo />
 			<BotonInicio />
@@ -21,7 +20,11 @@ import BotonInicio from '../components/SectionMain/botonInicio.astro';
 	
 
 		<section class="flex justify-center flex-col gap-9">
-			<Principal />
+			<article class="flex justify-center flex-col">
+				<h3 class="text-center font-lapizTitulo font-semibold  text-5xl mb-2">Ejercicios JavaScript</h3>
+				<Principal />
+			</article>
+			
 		</section>
 	
 	</main>

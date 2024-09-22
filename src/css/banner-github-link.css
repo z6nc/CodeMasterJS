@@ -1,0 +1,22 @@
+/* Estilos de Banner github Repositorio */
+#icon-btn-github{
+    border-radius: 10px;
+     border: 1px solid rgb(194, 194, 194);
+  }
+  #icon-btn-github::before {
+        content: "CodeMasterJS ⭐️";
+        padding: 1px 15px;
+        font-size: 13px;
+        filter: grayscale(80%);
+    }
+    #icon-btn-github:hover::before {
+        filter: grayscale(10%);
+    }
+    #ContenedorGit:hover #icon-btn-github{
+        background-color:rgba(254, 240, 138, 0.897);
+
+    }
+    #ContenedorGit:hover #icon-btn-github::before{
+        filter: grayscale(0%);
+    }
+   

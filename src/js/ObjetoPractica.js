@@ -13,7 +13,7 @@ export const ObjetoPractica = [
         ],
         soluciones: [
             {
-                forma: "Primera Forma",
+                forma: "1) Primera Solucion",
                 codigo: `
                 function validarContraseña(contraseña) {
                     const contraseñasValidas = ["2Fj(jjbFsuj", "eoZiugBf&g9"];

@@ -27,20 +27,57 @@ ObjetoPractica.map((practica) => (
        </pre>
         
         <div class="flex justify-center py-3">
-            <button class="bg-[#efd81d] hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded">
+            <button  class="btn-respuesta bg-[#efd81d] hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded">
                 Ver respuesta
             </button>
         </div>
-         <article>
-            <h3 class="font-bold font-lapizTitulo text-2xl">Solución :</h3>
-            <p class="font-lapizTexto text-[17px] py-2 text-gray-500">
-                {practica.PrimeraForma}
-            </p>
 
-         </article>
+         {/* Respuestas  */}
+         <section  class="container-solucion bg-slate-500 hidden ">
+            <div class="flex text-center items-center justify-between px-3">
+                <h3 class="font-bold font-lapizTitulo text-2xl">Soluciones</h3>
+                 <span  class="btn-exit-solucion cursor-pointer" >x</span>
+            </div>
+            <div class="flex flex-col">
+                {
+                    practica.soluciones.map((solucion) => (
+                        <div>
+                            <h4 class="font-bold font-lapizTitulo text-xl">{solucion.forma}</h4>
+                            <pre class="bg-white"><code class="language-js ">
+                                {solucion.codigo}
+                            </code></pre>
+                        </div>
+                    ))
+                }
+                
+            </div>         
+
+         </section>
            
     </section>
 ))}
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn-respuesta');
+    const exits = document.querySelectorAll('.btn-exit-solucion');
+    const solutions = document.querySelectorAll('.container-solucion');
+
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            solutions[index].classList.toggle('hidden');
+        });
+    });
+
+    exits.forEach((exit, index) => {
+        exit.addEventListener('click', () => {
+            solutions[index].classList.add('hidden');
+        });
+    });
+});
+
+</script>
+   
 
 
 

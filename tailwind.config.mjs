@@ -8,6 +8,9 @@ export default {
 				'lapizTexto': ['Comic Neue', 'sans-serif'],
 				'lapizTitulo': ['Patrick Hand', 'sans-serif'],
 			  },
+			  colors: {
+				'colorjs': '#facc15',
+			  } 
 		},
 	},
 	plugins: [

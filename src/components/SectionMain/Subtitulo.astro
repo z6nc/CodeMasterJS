@@ -1,6 +1,10 @@
-<article class="grid grid-cols-2 items-center text-center gap-5 mb-9">
-    <div>
-      <h4 class="text-xl font-bold mb-3 uppercase pb-4">Habilidades</h4>
+---
+const subtitleStyle ="text-xl font-bold mb-3 uppercase pb-4"
+---
+
+<article class="grid grid-cols-1 lg:grid-cols-2 items-center text-center gap-5 mb-9">
+    <div class="skills-container">
+      <h4 class={subtitleStyle}>Habilidades</h4>
       <ul class="flex justify-center gap-8 items-center">
         <div class="flex flex-col gap-4">
           <li class="bg-[#fb923c] text-white px-5 py-1 -rotate-2 font-bold shadow-lg">Resolución</li>
@@ -13,8 +17,8 @@
       </ul>
     </div>
     
-    <div>
-      <h4 class="text-xl font-bold mb-3 uppercase pb-4">Conceptos</h4>
+    <div class="concepts-container">
+      <h4 class={subtitleStyle}>Conceptos</h4>
       <ul class="flex justify-center gap-8 items-center">
         <div class="flex flex-col gap-4">
           <li class="bg-[#34d399] text-white px-5 py-1 -rotate-2 font-bold shadow-lg">Condicionales</li>

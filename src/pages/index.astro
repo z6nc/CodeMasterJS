@@ -7,24 +7,24 @@ import Subtitulo from '../components/SectionMain/Subtitulo.astro';
 import BotonInicio from '../components/SectionMain/botonInicio.astro';
 ---
 
-<Layout title="Ejercicios Javascript">
-	<header class="  w-full font-lapizTexto px-9 py-5 ">
+<Layout title="CodeMasterJS">
+	<header class="w-full font-lapizTexto px-9 py-5 ">
 		<Navbar />
 	</header>
 	<main class=" flex flex-col gap-6  max-w-5xl mx-auto ">
+		<!-- Seccion de titulos -->
 		<section class="  text-center  rounded-sm  px-2  mb-32">
 			<Titulo />
 			<Subtitulo />
 			<BotonInicio />
 		</section>
-	
 
+         <!-- Seccion de problemas js -->
 		<section class="flex justify-center flex-col gap-9">
 			<article class="flex justify-center flex-col">
 				<h3 class="text-center font-lapizTitulo font-semibold  text-5xl mb-6 ">Ejercicios JavaScript</h3>
 				<Principal />
 			</article>
-			
 		</section>
 	
 	</main>

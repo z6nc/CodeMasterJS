@@ -33,7 +33,7 @@ ObjetoPractica.map((practica) => (
         </div>
 
          {/* Respuestas  */}
-         <section  class="container-solucion bg-slate-500 hidden ">
+         <section  class="container-solucion hidden ">
             <div class="flex text-center items-center justify-between px-3">
                 <h3 class="font-bold font-lapizTitulo text-2xl">Soluciones</h3>
                  <span  class="btn-exit-solucion cursor-pointer" >x</span>
@@ -69,11 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    exits.forEach((exit, index) => {
-        exit.addEventListener('click', () => {
-            solutions[index].classList.add('hidden');
-        });
-    });
+    
 });
 
 </script>

@@ -34,15 +34,14 @@ ObjetoPractica.map((practica) => (
 
          {/* Respuestas  */}
          <section  class="container-solucion hidden ">
-            <div class="flex text-center items-center justify-between px-3">
+            <div class="flex text-center mb-2 ">
                 <h3 class="font-bold font-lapizTitulo text-2xl">Soluciones</h3>
-                 <span  class="btn-exit-solucion cursor-pointer" >x</span>
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col gap-6">
                 {
                     practica.soluciones.map((solucion) => (
-                        <div>
-                            <h4 class="font-bold font-lapizTitulo text-xl">{solucion.forma}</h4>
+                        <div id="content-codigo-solucion" class=" transition-all duration-75 ease-in-out hover:shadow-md p-3  rounded-md hover:border-r-2 hover:border-t-2 border-yellow-300">
+                            <h4 class="font-bold font-lapizTexto ">{solucion.forma} </h4>
                             <pre class="bg-white"><code class="language-js ">
                                 {solucion.codigo}
                             </code></pre>
@@ -56,6 +55,8 @@ ObjetoPractica.map((practica) => (
            
     </section>
 ))}
+
+
 
 <script>
 window.addEventListener('DOMContentLoaded', () => {

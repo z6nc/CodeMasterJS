@@ -22,7 +22,7 @@ export const ObjetoPractica = [
                 `
             },
             {
-                forma: "Segunda Forma",
+                forma: "2) Segunda Solucion",
                 codigo: `
                 function validarContraseña(contraseña) {
                     return contraseña === "2Fj(jjbFsuj" || contraseña === "eoZiugBf&g9";
@@ -30,7 +30,7 @@ export const ObjetoPractica = [
                 `
             },
             {
-                forma: "Tercera Forma",
+                forma: "3) Tercera Solucion",
                 codigo: `
                 function validarContraseña(contraseña){
                     const contraseñaValida = "2Fj(jjbFsuj";
@@ -70,7 +70,7 @@ export const ObjetoPractica = [
         ],
         soluciones: [
             {
-                forma: "Primera Forma",
+                forma: "1) Primera Solucion",
                 codigo: `
                 function calcularImpuestos(edad, ingreso) {
                     const TASA_IMPUESTO = 0.40; // Constante para la tasa de impuestos
@@ -84,7 +84,7 @@ export const ObjetoPractica = [
                 `
             },
             {
-                forma: "Segunda Forma",
+                forma: "2) Segunda Solucion",
                 codigo: `
                 function calcularImpuestos(edad, ingresos) {
                     return edad >= 18 && ingresos >= 1000 ? ingresos * 0.4 : 0;
@@ -92,7 +92,7 @@ export const ObjetoPractica = [
                 `
             },
             {
-                forma: "Tercera Forma",
+                forma: "3) Tercera Solucion",
                 codigo: `
                 function calcularImpuestos(edad, ingresos) {
                     if (edad >= 18 && ingresos >= 1000) {

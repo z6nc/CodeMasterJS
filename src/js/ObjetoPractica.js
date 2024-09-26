@@ -14,6 +14,9 @@ export const ObjetoPractica = [
         soluciones: [
             {
                 forma: "1) Primera Solucion",
+                explicacion: "En esta solución se declara un array contraseñasValidas que contiene las contraseñas válidas. Luego se utiliza el método INCLUDES para verificar si la contraseña recibida como argumento se encuentra en el array contraseñasValidas. Si la contraseña es válida se retorna true, de lo contrario se retorna false.",
+                metodo: "INCLUDES",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes",
                 codigo: `
                 function validarContraseña(contraseña) {
                     const contraseñasValidas = ["2Fj(jjbFsuj", "eoZiugBf&g9"];
@@ -23,6 +26,9 @@ export const ObjetoPractica = [
             },
             {
                 forma: "2) Segunda Solucion",
+                explicacion: "En esta solución utiliza una única línea con una expresión booleana para verificar si la contraseña es válida. Es más concisa y directa, retornando true o false sin estructuras adicionales.",
+                metodo: "Expresión Booleana",
+                link: "https://www.aulascript.com/lenguaje/objetos/booleanos.htm",
                 codigo: `
                 function validarContraseña(contraseña) {
                     return contraseña === "2Fj(jjbFsuj" || contraseña === "eoZiugBf&g9";
@@ -31,6 +37,9 @@ export const ObjetoPractica = [
             },
             {
                 forma: "3) Tercera Solucion",
+                explicacion: "En esta solución utiliza una estructura if-else con operador lógico  para hacer la misma verificación. Aunque es más explícita en la lógica, es más larga y menos eficiente.",
+                metodo: "operador lógico ",
+                link: "https://lenguajejs.com/javascript/operadores/logicos/",
                 codigo: `
                 function validarContraseña(contraseña){
                     const contraseñaValida = "2Fj(jjbFsuj";
@@ -71,6 +80,9 @@ export const ObjetoPractica = [
         soluciones: [
             {
                 forma: "1) Primera Solucion",
+                explicacion : "En esta solución declara una constante TASA_IMPUESTO para la tasa de impuestos y utiliza una estructura if para verificar las condiciones de edad e ingresos. Es clara, pero un poco más extensa.",
+                metodo:"constantes",
+                link:"https://ed.team/blog/variables-constantes-y-scope-de-bloque-en-javascript",
                 codigo: `
                 function calcularImpuestos(edad, ingreso) {
                     const TASA_IMPUESTO = 0.40; // Constante para la tasa de impuestos
@@ -85,6 +97,9 @@ export const ObjetoPractica = [
             },
             {
                 forma: "2) Segunda Solucion",
+                explicacion: "En esta solución usa un operador ternario para realizar la misma verificación en una sola línea. Es más compacta y fácil de leer, retornando directamente el resultado.",
+                metodo: "Operador Ternario",
+                link:"https://lenguajejs.com/fundamentos/estructuras-de-control/operador-ternario/",
                 codigo: `
                 function calcularImpuestos(edad, ingresos) {
                     return edad >= 18 && ingresos >= 1000 ? ingresos * 0.4 : 0;
@@ -93,6 +108,9 @@ export const ObjetoPractica = [
             },
             {
                 forma: "3) Tercera Solucion",
+                explicacion: "En esta solución es similar a la primera, utiliza una estructura if-else para comprobar las condiciones de edad e ingresos. Es más explícita pero un poco más larga y no usa constantes.",
+                metodo:"IF-ELSE",
+                link:"https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/if...else",
                 codigo: `
                 function calcularImpuestos(edad, ingresos) {
                     if (edad >= 18 && ingresos >= 1000) {
@@ -105,6 +123,8 @@ export const ObjetoPractica = [
             }
         ],
         CasosPrueba: `
+        function calcularImpuestos(edad, ingresos)
+
         // Casos de prueba
         console.log(calcularImpuestos(18, 1000)); // 400
         console.log(calcularImpuestos(40, 10000)); // 4000

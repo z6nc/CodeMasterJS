@@ -40,7 +40,7 @@ ObjetoPractica.map((practica) => (
             <div class="flex flex-col gap-6">
                 {
                     practica.soluciones.map((solucion) => (
-                        <div id="content-codigo-solucion" class=" border-[1px] border-gray-300 rounded-md p-3  ">
+                        <div id="content-codigo-solucion" class="p-3 border-b-[1px] border-gray-500 ">
                             <div class=" flex  justify-between items-center text-center">
                                  <h4 class="font-bold font-lapizTexto text-xl ">{solucion.forma} </h4>
                                  <a target="_blank" class="text-sm bg-[#f0db4f] rounded-md px-3 py-1  font-bold"   href={solucion.link}>{solucion.metodo}</a>

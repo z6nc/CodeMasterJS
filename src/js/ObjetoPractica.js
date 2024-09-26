@@ -14,8 +14,8 @@ export const ObjetoPractica = [
         soluciones: [
             {
                 forma: "1) Primera Solucion",
-                explicacion: "En esta solución se declara un array contraseñasValidas que contiene las contraseñas válidas. Luego se utiliza el método INCLUDES para verificar si la contraseña recibida como argumento se encuentra en el array contraseñasValidas. Si la contraseña es válida se retorna true, de lo contrario se retorna false.",
-                metodo: "INCLUDES",
+                explicacion: "En esta solución se utiliza un array contraseñasValidas y el método includes() para verificar si la contraseña es válida. Es más escalable y fácil de modificar, ya que se puede agregar o quitar contraseñas sin cambiar la lógica.",
+                metodo: "Funcion includes",
                 link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes",
                 codigo: `
                 function validarContraseña(contraseña) {
@@ -38,7 +38,7 @@ export const ObjetoPractica = [
             {
                 forma: "3) Tercera Solucion",
                 explicacion: "En esta solución utiliza una estructura if-else con operador lógico  para hacer la misma verificación. Aunque es más explícita en la lógica, es más larga y menos eficiente.",
-                metodo: "operador lógico ",
+                metodo: "Operador lógico ",
                 link: "https://lenguajejs.com/javascript/operadores/logicos/",
                 codigo: `
                 function validarContraseña(contraseña){
@@ -81,7 +81,7 @@ export const ObjetoPractica = [
             {
                 forma: "1) Primera Solucion",
                 explicacion : "En esta solución declara una constante TASA_IMPUESTO para la tasa de impuestos y utiliza una estructura if para verificar las condiciones de edad e ingresos. Es clara, pero un poco más extensa.",
-                metodo:"constantes",
+                metodo:"Variables",
                 link:"https://ed.team/blog/variables-constantes-y-scope-de-bloque-en-javascript",
                 codigo: `
                 function calcularImpuestos(edad, ingreso) {
@@ -109,7 +109,7 @@ export const ObjetoPractica = [
             {
                 forma: "3) Tercera Solucion",
                 explicacion: "En esta solución es similar a la primera, utiliza una estructura if-else para comprobar las condiciones de edad e ingresos. Es más explícita pero un poco más larga y no usa constantes.",
-                metodo:"IF-ELSE",
+                metodo:"Condicioanles If-Else",
                 link:"https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/if...else",
                 codigo: `
                 function calcularImpuestos(edad, ingresos) {

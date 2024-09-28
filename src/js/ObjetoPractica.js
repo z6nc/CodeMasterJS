@@ -402,6 +402,99 @@ export const ObjetoPractica = [
         console.log(contarRango(5, 6)); // 0
         `
     },
+    {
+        id: 8,
+        nombre: "Sumar Rango",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 08",
+        NombreFuncion: "sumarRango",
+        descripcion: "Escribir una función llamada sumarRango que reciba dos argumentos: número inicial y número final. La función debe retornar la suma de los números en ese rango, incluyendo los extremos.",
+        restricciones: [
+            "La función se debe llamar sumarRango.",
+            "La función debe recibir dos números como argumento.",
+            "La suma debe incluir tanto el número inicial como el número final."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Esta solución utiliza un ciclo `for` para recorrer desde el número inicial hasta el número final, sumando cada valor. Es una solución sencilla y efectiva que garantiza que todos los números entre el rango, incluidos los extremos, sean sumados.",
+                metodo: "Ciclo for",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                codigo: `
+                function sumarRango(num1, num2) {
+                    if (num1 === num2) {
+                        return 0; // Si ambos números son iguales, retornamos 0
+                    }
+                    
+                    let suma = 0;
+                    for (let i = num1; i <= num2; i++) {
+                        suma += i;
+                    }
+                    return suma;
+                }
+                `
+            }
+        ],
+        CasosPrueba: `
+        function sumarRango(num1, num2)
+        
+        // código de prueba
+        console.log(sumarRango(0, 10)); // 55
+        console.log(sumarRango(12, 14)); // 39
+        console.log(sumarRango(5, 5)); // 0
+        console.log(sumarRango(1, 1)); // 0
+        `
+    },
+
+    {
+        id: 9,
+        nombre: "Número de Aes",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 09",
+        NombreFuncion: "numeroDeAes",
+        descripcion: "Escribir una función llamada numeroDeAes que reciba un string y retorne el número de veces que aparece la letra 'a'.",
+        restricciones: [
+            "La función se debe llamar numeroDeAes.",
+            "La función debe recibir un string como argumento.",
+            "Debe retornar el número de veces que aparece la letra 'a' en la cadena."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Esta solución utiliza un ciclo `for` para recorrer el string y cuenta cuántas veces aparece la letra 'a'. El uso de un diccionario (array) es una forma flexible de manejar letras específicas, aunque en este caso solo contiene la letra 'a'.",
+                metodo: "Método includes",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes",
+                codigo: `
+                function numeroDeAes(palabra) {
+                    const Diccionario = ["a"];
+                    let contador = 0;
+    
+                    if (palabra.length > 0) {
+                        for (let i = 0; i < palabra.length; i++) {
+                            let letra = palabra[i];
+                            if (Diccionario.includes(letra)) {
+                                contador++;
+                            }
+                        }
+                        return contador;
+                    } else {
+                        return 0; // Retorna 0 si la palabra está vacía
+                    }
+                }
+                `
+            }
+        ],
+        CasosPrueba: `
+        function numeroDeAes(palabra)
+
+        // código de prueba
+        console.log(numeroDeAes("aeiou"));       // 1
+        console.log(numeroDeAes("abracadabra")); // 5
+        console.log(numeroDeAes("etinol"));      // 0
+        console.log(numeroDeAes(""));            // 0
+        `
+    },
+    
     
     
     

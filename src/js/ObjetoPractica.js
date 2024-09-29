@@ -494,6 +494,89 @@ export const ObjetoPractica = [
         console.log(numeroDeAes(""));            // 0
         `
     },
+    {
+        id: 10,
+        nombre: "Número de Caracteres",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 10",
+        NombreFuncion: "numeroDeCaracteres",
+        descripcion: "Escribir una función llamada numeroDeCaracteres que reciba un string y un caracter (un string de un caracter). La función debe retornar el número de veces que aparece el caracter en el string.",
+        restricciones: [
+            "La función se debe llamar numeroDeCaracteres.",
+            "La función debe recibir dos argumentos: un string y un caracter.",
+            "Debe retornar el número de veces que el caracter aparece en el string."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Esta solución utiliza un ciclo `for` para recorrer el string y comparar cada carácter con el que se busca. Si hay coincidencia, aumenta el contador.",
+                metodo: "Ciclo for y comparación directa",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                codigo: `
+                function numeroDeCaracteres(Palabra, letra) {
+                    let contador = 0;
+                    let letraConvertido = String(letra); // Convierte la letra a una cadena
+                    
+                    // Recorre cada carácter de la palabra
+                    for (let i = 0; i < Palabra.length; i++) {
+                        let letras = Palabra[i];
+                        // Compara el carácter actual con la letraConvertida
+                        if (letras === letraConvertido) {
+                            contador++;
+                        }
+                    }
+                    return contador;
+                }
+                `
+            }
+        ],
+        CasosPrueba: `
+        // código de prueba
+        console.log(numeroDeCaracteres("Hola Mundo", "o")); // 2
+        console.log(numeroDeCaracteres("MMMMM", "m")); // 0
+        console.log(numeroDeCaracteres("eeee", 'e')); // 4
+        `
+    },
+    {
+        id: 11,
+        nombre: "Suma de Arreglo",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 11",
+        NombreFuncion: "sumarArreglo",
+        descripcion: "Escribir una función llamada sumarArreglo que reciba un arreglo de números y retorne la suma de todos los elementos.",
+        restricciones: [
+            "La función se debe llamar sumarArreglo.",
+            "La función debe recibir un arreglo de números como argumento.",
+            "Debe retornar la suma de todos los números en el arreglo."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Esta solución utiliza un bucle for para iterar sobre cada elemento del arreglo, sumando su valor a una variable acumuladora.",
+                metodo: "Ciclo for",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                codigo: `
+                    function sumarArreglo(array) {
+                        let sumaArray = 0;
+                        for (let i = 0; i < array.length; i++) {
+                            sumaArray += array[i];
+                        }
+                        return sumaArray;
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+            // Código de prueba
+            console.log(sumarArreglo([3, 1, 2])) // 6
+            console.log(sumarArreglo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])) // 55
+            console.log(sumarArreglo([])) // 0
+        `
+    }
+    
+
+
+    
     
     
     

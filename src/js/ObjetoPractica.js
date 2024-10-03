@@ -462,7 +462,7 @@ export const ObjetoPractica = [
             {
                 forma: "1) Primera Solución",
                 explicacion: "Esta solución utiliza un ciclo `for` para recorrer el string y cuenta cuántas veces aparece la letra 'a'. El uso de un diccionario (array) es una forma flexible de manejar letras específicas, aunque en este caso solo contiene la letra 'a'.",
-                metodo: "Método includes",
+                metodo: "Método includes()",
                 link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes",
                 codigo: `
                 function numeroDeAes(palabra) {
@@ -572,13 +572,304 @@ export const ObjetoPractica = [
             console.log(sumarArreglo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])) // 55
             console.log(sumarArreglo([])) // 0
         `
-    }
+    },
+
+    {
+        id: 12,
+        nombre: "Multiplicación de Arreglo",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 12",
+        NombreFuncion: "multiplicarArreglo",
+        descripcion: "Escribir una función llamada multiplicarArreglo que reciba un arreglo de números y retorne la multiplicación de todos los elementos.",
+        restricciones: [
+            "La función se debe llamar multiplicarArreglo.",
+            "La función debe recibir un arreglo de números como argumento.",
+            "Debe retornar la multiplicación de todos los números en el arreglo."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Esta solución usa un bucle for para iterar sobre cada elemento del arreglo, multiplicando su valor por una variable acumuladora inicializada en 1.",
+                metodo: "Ciclo for",
+                link: "https://lenguajejs.com/fundamentos/bucles-e-iteraciones/bucles-for/",
+                codigo: `
+                    function multiplicarArreglo(array) {
+                        let multiplicador = 1;
+                        for (let i = 0; i < array.length; i++) {
+                            multiplicador *= array[i];
+                        }
+                        return multiplicador;
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+           function multiplicarArreglo(array)
+           
+            // Código de prueba
+            console.log(multiplicarArreglo([4, 1, 2, 3])) // 24
+            console.log(multiplicarArreglo([1, 2, 3, 4, 5, 6, 7, 8])) // 40320
+            console.log(multiplicarArreglo([])) // 1
+        `
+    },
+    {
+        id: 13,
+        nombre: "Remover Ceros",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 13",
+        NombreFuncion: "removerCeros",
+        descripcion: "Escribir una función llamada removerCeros que reciba un arreglo de números y retorne un nuevo arreglo excluyendo los ceros (0).",
+        restricciones: [
+            "La función se debe llamar removerCeros.",
+            "La función debe recibir un arreglo de números como argumento.",
+            "Debe retornar un nuevo arreglo sin los ceros."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "La función usa el método 'filter()' para crear un nuevo arreglo excluyendo los ceros. 'filter()' retorna un nuevo arreglo con los elementos que cumplen con la condición dada.",
+                metodo: "Método filter()",
+                link: "https://ed.team/blog/javascript-filtrar-elementos-de-un-array-con-filter",
+                codigo: `
+                    function removerCeros(array) {
+                        return array.filter(numero => numero !== 0);
+                    }
+                `
+            },
+            {
+                forma: "2) Segunda Solución",
+                explicacion: "La función utiliza un ciclo for para iterar sobre cada número en el arreglo y empuja los números diferentes de cero a un nuevo arreglo.",
+                metodo: "Ciclo for",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                codigo: `
+                    function removerCeros(array) {
+                        let NuevoArray = [];
+                        for (let i = 0; i < array.length; i++) {
+                            if (array[i] > 0) {
+                                NuevoArray.push(array[i]);
+                            }
+                        }
+                        return NuevoArray;
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+           function removerCeros(array)
+
+            // Código de prueba
+            console.log(removerCeros([0, 1, 0, 2, 0, 3])) // [1, 2, 3]
+            console.log(removerCeros([9, 3, 6, 4])) // [9, 3, 6, 4]
+            console.log(removerCeros([0, 0, 0])) // []
+        `
+    },
+    {
+        id: 14,
+        nombre: "Sumar Arreglo con Rango",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 14",
+        NombreFuncion: "sumarArreglo",
+        descripcion: "Escribir una función llamada sumarArreglo que reciba un arreglo de números, la posición inicial y la posición final. La función debe retornar la suma de todos los números dentro del rango (incluyendo las posiciones inicial y final).",
+        restricciones: [
+            "La función se debe llamar sumarArreglo.",
+            "Debe recibir tres argumentos: un arreglo de números, una posición inicial y una posición final.",
+            "Debe sumar solo los números dentro del rango (posiciones incluidas)."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Esta implementación usa un ciclo `for` para iterar desde la posición inicial hasta la posición final, sumando los valores en esas posiciones. Se verifica que las posiciones estén dentro del arreglo.",
+                metodo: "Método for loop",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                codigo: `
+                    function sumarArreglo(array, posIni, posFin) {
+                        let suma = 0;
+                        for (let i = posIni; i <= posFin; i++) {
+                            suma += array[i];
+                        }
+                        return suma;
+                    }
+                `
+            },
+            {
+                forma: "2) Segunda Solución",
+                explicacion: "Esta implementación usa `slice()` para extraer una porción del arreglo entre las posiciones inicial y final, y luego `reduce()` para sumar los elementos de esa porción.",
+                metodo: "Método slice() + reduce()",
+                link: "https://filisantillan.com/bits/slice/",
+                codigo: `
+                    function sumarArreglo(array, posIni, posFin) {
+                        return array.slice(posIni, posFin + 1).reduce((a, b) => a + b, 0);
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+            function sumarArreglo(array, posIni, posFin)
+
+            // Código de prueba
+            console.log(sumarArreglo([1, 2, 3], 1, 2)) // 5
+            console.log(sumarArreglo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3, 6)) // 22
+            console.log(sumarArreglo([7, 8, 9], 0, 0)) // 7
+        `
+    },
+    
+    {
+        id: 15,
+        nombre: "Transcribir ADN a ARN",
+        dificultad: "Intermedio",
+        NumeroEjercicio: "Ejercicio 15",
+        NombreFuncion: "transcribir",
+        descripcion: "Escribir una función llamada transcribir que reciba un string representando una cadena de ADN y retorne otro string con su complemento ARN.",
+        restricciones: [
+            "La función debe recibir un string de ADN.",
+            "Debe retornar un string que es el complemento ARN del ADN ingresado.",
+            "Los complementos de las bases nitrogenadas son: G -> C, C -> G, T -> A, A -> U."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Esta solución recorre la cadena de ADN carácter por carácter, verificando cada base nitrogenada e insertando su complemento correspondiente en el ARN.",
+                metodo: "Método básico con condicionales (if-else)",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/if...else",
+                codigo: `
+                    function transcribir(array) {
+                        let ARN = "";
+                        for (let i = 0; i < array.length; i++) {
+                            if (array[i] === "G") {
+                                ARN += "C";
+                            } else if (array[i] === "C") {
+                                ARN += "G";
+                            } else if (array[i] === "T") {
+                                ARN += "A";
+                            } else if (array[i] === "A") {
+                                ARN += "U";
+                            } else {
+                                ARN += array[i];
+                            }
+                        }
+                        return ARN;
+                    }
+                `
+            },
+            {
+                forma: "2) Segunda Solución",
+                explicacion: "En esta solución, usamos un objeto de mapeo para asociar cada base nitrogenada con su complemento ARN, lo que hace que el código sea más conciso. El uso de un objeto nos permite reducir la cantidad de condicionales.",
+                metodo: "Método con objeto de map()",
+                link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
+                codigo: `
+                    function transcribir(ADN) {
+                        const map = {
+                            'G': 'C',
+                            'C': 'G',
+                            'T': 'A',
+                            'A': 'U'
+                        };
+                        let arn = "";
+                        for (let i = 0; i < ADN.length; i++) {
+                            arn += map[ADN[i]] || ADN[i];
+                        }
+                        return arn;
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+           function transcribir(ADN)
+
+            // Código de prueba
+            console.log(transcribir("ACGT")) // "UGCA"
+            console.log(transcribir("ACGTGGTCTTAA")) // "UGCACCAGAAUU"
+        `
+    },
+    {
+        id: 16,
+        nombre: "Capitalizar primera letra de un string",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 16",
+        NombreFuncion: "capitalizar",
+        descripcion: "Escribir una función llamada capitalizar que reciba un string y capitalice la primera letra del string. El resto de la palabra debe permanecer igual.",
+        restricciones: [
+            "La función debe recibir un string.",
+            "Debe retornar el mismo string con la primera letra capitalizada."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Esta solución verifica si la palabra no está vacía, y luego capitaliza la primera letra con el método `toUpperCase`. Finalmente, concatena el resto de la palabra sin modificarla usando `slice(1)`.",
+                metodo: "Método  toUpperCase()",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase",
+                codigo: `
+                    function capitalizar(palabra) {
+                        if (palabra.length === 0) {
+                            return palabra; // Si el string está vacío, se retorna igual
+                        }
+                        // Capitaliza la primera letra y concatena el resto
+                        let nuevaPalabra = palabra[0].toUpperCase() + palabra.slice(1);
+                        return nuevaPalabra;
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+           function capitalizar(palabra)
+           
+            // Código de prueba
+            console.log(capitalizar("pedro")); // "Pedro"
+            console.log(capitalizar("hola mundo")); // "Hola mundo"
+            console.log(capitalizar("")); // ""
+        `
+    },
+    {
+        id: 17,
+        nombre: "Capitalizar la primera letra de cada palabra",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 17",
+        NombreFuncion: "capitalizar",
+        descripcion: "Escribir una función llamada capitalizar que reciba un string y capitalice la primera letra de cada palabra. El resto de las letras en cada palabra deben permanecer en minúsculas.",
+        restricciones: [
+            "La función debe recibir un string.",
+            "Debe retornar el mismo string con la primera letra de cada palabra capitalizada."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "La función primero divide la frase en un arreglo de palabras usando `split(' ')`. Luego, en un bucle, convierte la primera letra de cada palabra en mayúscula y concatena el resto con `slice(1)`. Finalmente, une las palabras usando `join(' ')` para devolver el resultado.",
+                metodo: "Metodo split() + join()",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/split",
+                codigo: `
+                    function capitalizar(frase) {
+                        if (frase.length === 0) {
+                            return frase; // Si la cadena está vacía, se retorna igual
+                        }
+                    
+                        // Dividir la frase en palabras
+                        let palabras = frase.split(' ');
+    
+                        // Capitalizar la primera letra de cada palabra
+                        for (let i = 0; i < palabras.length; i++) {
+                            palabras[i] = palabras[i][0].toUpperCase() + palabras[i].slice(1);
+                        }
+    
+                        // Unir las palabras en una sola cadena
+                        return palabras.join(' ');
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+            // Código de prueba
+            console.log(capitalizar("hola mundo")); // "Hola Mundo"
+            console.log(capitalizar("make it real")); // "Make It Real"
+            console.log(capitalizar("")); // ""
+        `
+    },
+    
+    
+
+    
     
 
 
-    
-    
-    
     
     
     

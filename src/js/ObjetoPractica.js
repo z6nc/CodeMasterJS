@@ -857,12 +857,228 @@ export const ObjetoPractica = [
             }
         ],
         CasosPrueba: `
+            function capitalizar(frase)
+
             // Código de prueba
             console.log(capitalizar("hola mundo")); // "Hola Mundo"
             console.log(capitalizar("make it real")); // "Make It Real"
             console.log(capitalizar("")); // ""
         `
     },
+    {
+        id: 18,
+        nombre: "Encontrar el número máximo en un arreglo",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 18",
+        NombreFuncion: "max",
+        descripcion: "Escribir una función llamada max que reciba un arreglo de números y retorne el número máximo. Debe hacerlo sin usar el método Math.max de JavaScript.",
+        restricciones: [
+            "No se permite el uso del método Math.max()"
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Recorremos el arreglo utilizando un bucle `for`. Comparamos cada número con el valor más alto encontrado hasta ese punto (inicializado en 0), y si el número actual es mayor, lo actualizamos.",
+                metodo: "bucle for, comparaciones",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                codigo: `
+                    function max(array) {
+                        let NumeroMayor = 0;
+                        for (let i = 0; i < array.length; i++) {
+                            if (NumeroMayor < array[i]) {
+                                NumeroMayor = array[i];
+                            }
+                        }
+                        return NumeroMayor;
+                    }
+                `
+            },
+            {
+                forma: "2) Segunda Solución (usando Math.max)",
+                explicacion: "Usamos el operador de propagación (`...`) para expandir los elementos del array y pasarlos como argumentos a `Math.max`.",
+                metodo: "Metodo Math.max()",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/max",
+                codigo: `
+                    function max(array) {
+                        return Math.max(...array); // Usamos el operador spread para descomponer el arreglo
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+            function max(array)
+
+            // Código de prueba
+            console.log(max([3, 9, 6])) // 9
+            console.log(max([67, 35, 54, 26])) // 67
+            console.log(max([5, 9, 2, 4, 5, 7])) // 9
+        `
+    },
+    {
+        id: 19,
+        nombre: "Encontrar el número mínimo en un arreglo",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 19",
+        NombreFuncion: "min",
+        descripcion: "Escribir una función llamada min que reciba un arreglo de números y retorne el número mínimo sin usar el método Math.min de JavaScript.",
+        restricciones: [
+            "No se permite el uso del método Math.min()."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Inicializamos la variable `NumeroMenor` con el primer elemento del arreglo. Luego recorremos el arreglo con un bucle `for`, comparando cada número con `NumeroMenor`, y actualizamos si encontramos un número menor.",
+                metodo: "bucle for, comparaciones",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                codigo: `
+                    function min(array) {
+                        let NumeroMenor = array[0]; // Inicializar con el primer elemento del array
+                        for (let i = 0; i < array.length; i++) {
+                            if (NumeroMenor > array[i]) {
+                                NumeroMenor = array[i]; // Actualizar si encontramos un número menor
+                            }
+                        }
+                        return NumeroMenor;
+                    }
+                `
+            },
+            {
+                forma: "2) Segunda Solución",
+                explicacion: "Utilizamos el método `Math.min` con el operador de propagación para encontrar el número mínimo del arreglo. Este método devuelve el valor mínimo entre los argumentos proporcionados.",
+                metodo: "Metodo Math.min()",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/min",
+                codigo: `
+                    function min(array) {
+                        return Math.min(...array); // Usamos el operador spread para descomponer el arreglo
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+            function min(array)
+            
+            // Código de prueba
+            console.log(min([3, 9, 6])) // 3
+            console.log(min([67, 35, 54, 26])) // 26
+            console.log(min([5, 9, 2, 4, 5, 7])) // 2
+        `
+    },
+    {
+        id: 20,
+        nombre: "Transformar una cadena en una contraseña segura",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 20",
+        NombreFuncion: "password",
+        descripcion: "Escribir una función llamada password que reciba un string y retorne un nuevo string realizando cambios específicos en el formato.",
+        restricciones: [
+            "El string de entrada puede contener espacios y caracteres especiales."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Utiliza un objeto de mapeo para reemplazar los caracteres específicos. Se recorre la cadena, se convierten las letras a minúsculas, se eliminan los espacios y se reemplazan los caracteres según el mapeo.",
+                metodo: "bucle for, mapeo de caracteres",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                codigo: `
+                    function password(contraseña) {
+                        const map = {
+                            'a': '4',
+                            'e': '3',
+                            'i': '1',
+                            'o': '0'
+                        };
+                        
+                        let passwordWin = "";
+                        for (let i = 0; i < contraseña.length; i++) {
+                            let char = contraseña[i].toLowerCase(); // Convertir a minúscula
+                            if (char !== ' ') {  // Ignorar los espacios
+                                passwordWin += map[char] || char; // Reemplazar según el mapeo
+                            }
+                        }
+                        
+                        return passwordWin;
+                    }
+                `
+            },
+            {
+                forma: "2) Segunda Solución",
+                explicacion: "Utiliza el método `replace` de las cadenas junto con expresiones regulares para realizar los reemplazos de caracteres en una sola línea. Primero convierte toda la cadena a minúsculas y elimina los espacios usando `replace`.",
+                metodo: "Metodo replace()",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/replace",
+                codigo: `
+                    function password(contraseña) {
+                        return contraseña
+                            .toLowerCase() // Convertir a minúsculas
+                            .replace(/ /g, '') // Eliminar espacios
+                            .replace(/a/g, '4')
+                            .replace(/e/g, '3')
+                            .replace(/i/g, '1')
+                            .replace(/o/g, '0');
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+            function password(contraseña)
+
+            // Código de prueba
+            console.log(password("hola")); // "h0l4"
+            console.log(password("esta es una prueba")); // "3st43sun4pru3b4"
+            console.log(password("")); // ""
+        `
+    },
+    {
+        id: 21,
+        nombre: "Filtrar números pares de un arreglo",
+        dificultad: "Fácil",
+        NumeroEjercicio: "Ejercicio 21",
+        NombreFuncion: "pares",
+        descripcion: "Escribir una función llamada pares que reciba un arreglo de números y retorne un nuevo arreglo con los números pares únicamente.",
+        restricciones: [
+            "El arreglo de entrada puede contener números negativos y positivos.",
+            "El arreglo de entrada no debe estar vacío."
+        ],
+        soluciones: [
+            {
+                forma: "1) Primera Solución",
+                explicacion: "Utiliza un bucle `for` para recorrer el arreglo y verifica si cada número es par. Si lo es, se añade al nuevo arreglo de números pares.",
+                metodo: "bucle for, comprobación de paridad",
+                link: "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                codigo: `
+                    function pares(array) {
+                        let ArrayPares = [];
+                        for (let i = 0; i < array.length; i++) {
+                            if (array[i] % 2 === 0) {
+                                ArrayPares.push(array[i]);
+                            }
+                        }
+                        return ArrayPares;
+                    }
+                `
+            },
+            {
+                forma: "2) Segunda Solución",
+                explicacion: "Utiliza el método `filter` para crear un nuevo arreglo que contenga solo los números pares. Este método es más conciso y legible.",
+                metodo: "Metodo filter()",
+                link: "https://ed.team/blog/javascript-filtrar-elementos-de-un-array-con-filter",
+                codigo: `
+                    function pares(array) {
+                        return array.filter(num => num % 2 === 0);
+                    }
+                `
+            }
+        ],
+        CasosPrueba: `
+            function pares(array)
+
+            // Código de prueba
+            console.log(pares([1, 2, 3, 4, 5, 6])); // [2, 4, 6]
+            console.log(pares([])); // []
+        `
+    }
+    
+    
+    
     
     
 

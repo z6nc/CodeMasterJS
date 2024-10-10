@@ -10,7 +10,11 @@ export default {
 			  },
 			  colors: {
 				'colorjs': '#facc15',
-			  } 
+			  } ,
+				visibility: {
+				  'content-auto': 'content-visibility: auto',
+				  
+				}
 		},
 	},
 	plugins: [

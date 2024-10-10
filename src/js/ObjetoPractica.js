@@ -1,3 +1,11 @@
+/*
+ identificadores de dificualtad de los ejercicios
+ Facil : 🌱
+ Intermedia : ⚡
+ Dificil : 🔥
+
+*/
+
 export const ObjetoPractica = [
     {
         id: 1,
@@ -232,7 +240,7 @@ export const ObjetoPractica = [
     {
         id: 5,
         nombre: "Likes Convertidos",
-        dificultad: "Intermedia",
+        dificultad: "Intermedio",
         NumeroEjercicio: "Ejercicio 05",
         NombreFuncion: "likes",
         descripcion: "Escribir una función llamada likes que reciba un número y retorne un string en formato 'K' para miles y 'M' para millones.",

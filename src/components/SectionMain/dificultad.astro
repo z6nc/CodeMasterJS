@@ -1,0 +1,60 @@
+---
+const dificultades = [
+  {
+    nombre: "Facil",
+    icono: "▰▱▱",
+    estilo:" hover:border-green-400 hover:bg-[#16ff4922]"
+  },
+  {
+    nombre: "Medio",
+    icono: "▰▰▱",
+    estilo:" hover:border-yellow-500 hover:bg-[#ffef1622]"
+  },
+  {
+    nombre: "Dificil",
+    icono: "▰▰▰",
+    estilo:" hover:border-red-500 hover:bg-[#ff161622]"
+  },
+]
+const hola = "flex justify-center items-center gap-4 bg-white border-[1px] border-gray-200 rounded-lg py-2 "
+---
+
+<section class="Container-Dificultad grid grid-cols-3 text-center gap-6  font-lapizTitulo  ">
+    {
+        dificultades.map((dificultad) => (
+            <article class= {dificultad.estilo}> 
+                <div >
+                    <h3 class=" text-xl">{dificultad.nombre}</h3>
+                    {dificultad.nombre === "Facil" && (
+                    <span class="text-green-500">{dificultad.icono}</span>
+                    )} 
+                    {dificultad.nombre === "Medio" && (
+                    <span class="text-yellow-500">{dificultad.icono}</span>
+                    )}  {dificultad.nombre === "Dificil" && (
+                    <span class="text-red-500">{dificultad.icono}</span>
+                    )}
+
+                </div>
+                <span class="text-slate-900 cursor-pointer ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+                </span>
+            </article>
+        ))
+    }
+           
+</section>
+
+<style>
+    article{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        background-color: white;
+        border: 1px solid #d1d5db;
+        border-radius: 0.375rem;
+        padding: 0.5rem 1rem;
+        transition: all 0.2s ease-in;
+       
+    }
+</style>

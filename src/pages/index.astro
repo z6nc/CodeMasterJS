@@ -1,34 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/navbar.astro';
-import Titulo from '../components/SectionMain/Titulo.astro';
-import Principal from '../components/SectionMain/Principal.astro';
-import Subtitulo from '../components/SectionMain/Subtitulo.astro';
-import BotonInicio from '../components/SectionMain/botonInicio.astro';
-import Dificultad from '../components/SectionMain/dificultad.astro';
+import IntroExercises from '../components/Section/IntroExercises.astro';
+import Subtitulo from '../components/UI/Subtitulo.astro';
+import Boton from '../components/UI/Boton.astro'
+
 ---
 
 <Layout title="CodeMasterJS">
-	<header class="w-full font-lapizTexto px-9 py-5 ">
-		<Navbar />
-	</header>
-	<main class=" flex flex-col gap-6  max-w-5xl mx-auto ">
+	
+	<main class=" max-w-5xl mx-auto lg:h-[80vh] ">
 		<!-- Seccion de titulos -->
-		<section class="  text-center  rounded-sm  px-2  mb-32">
-			<Titulo />
+		<section class="flex flex-col justify-center gap-12 my-9">
+			<IntroExercises />
 			<Subtitulo />
-			<BotonInicio />
+
+			 <div class=" flex flex-wrap gap-5 justify-center">
+				<Boton  texto="Ejercicios js"  link={"/Ejercicios"}/>
+				<Boton  texto="Pruebas Tecnicas" link={"/404"} />
+			 </div>
+
 		</section>
 
-         <!-- Seccion de problemas js -->
-		<section class="flex justify-center flex-col gap-9">
-			<article class="flex justify-center flex-col gap-6">
-				<h3 class="text-center font-lapizTitulo font-semibold  text-5xl mb-6 ">Ejercicios JavaScript</h3>
-				<Dificultad />
-				<Principal />
-			</article>
-		</section>
-	
+		
+		
 	</main>
 </Layout>
 

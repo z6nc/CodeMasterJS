@@ -1,0 +1,104 @@
+---
+import { ObjetoPractica } from "../../data/ObjetoPractica.js";
+
+const dificultad = {
+     'Facil' :"bg-gradient-to-t to-green-500 to-40%  from-transparent",
+     'Intermedio' :"bg-gradient-to-t to-orange-400 to-40%  from-transparent",
+     'Dificil' :"bg-gradient-to-t to-red-500 to-40%  from-transparent",
+}
+---
+{
+ObjetoPractica.map((practica) => (
+    <section class=" contanier-ejercicio relative flex flex-col gap-3 py-7 px-7 mb-8 bg-white  border border-[#f5f5f5]  rounded shadow-sm bg-gradient-to-bl ">
+        <div class="container-subtitulo w-full flex justify-between items-center mb-1">
+            <h2 class=" text-2xl  font-bold  ">{practica.NumeroEjercicio} : {practica.nombre}</h2>
+           {
+
+              <span class={`${dificultad[practica.dificultad]}  absolute w-10 h-16 right-0 top-0 z-30`}></span>
+           }
+        </div>
+
+        <p class=" text-[17px] py-1 text-gray-500">
+            {practica.descripcion}
+        </p>
+        
+        <div class="py-4">
+            <h3 class="font-semibold  text-xl">Restricciones :</h3>
+            <ul class=" list-disc  text-[16px]  text-gray-500 marker:text-yellow-400  mx-6">
+                {
+                    practica.restricciones.map((restriccion) => (
+                        <li class="py-1">{restriccion}</li>
+                    ))
+                }
+                
+            </ul>
+        </div>
+        
+        <pre class="bg-white"><code class="language-js ">
+            {practica.CasosPrueba}
+        </code>
+       </pre>
+
+
+        {/* Boton de respuesta */}
+        <div class=" btn-respuesta flex items-center justify-between px-4 w-full py-2    rounded-xl  cursor-pointer  bg-[#ffe642a6] hover:bg-[#ffe642] ">
+            <button  class="text-black font-bold ">
+                Solución
+            </button>
+            <span class="hover:rotate-180 transition-all duration-75 ease-in">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+            </span>
+        </div>
+
+         {/* Respuestas  */}
+         <section  class="container-solucion hidden ">
+            <div class="flex flex-col gap-y-6">
+                {
+                    practica.soluciones.map((solucion) => (
+                        <div id="content-codigo-solucion" class="p-3 border-b border-gray-500 ">
+                            <div class=" flex  justify-between items-center text-center">
+                                 <h4 class="font-semibold  text-lg ">{solucion.forma} </h4>
+                                 <a target="_blank" class="px-3 py-1 text-sm font-semibold border border-[#ffe11e] bg-[#f0da4f0c] hover:bg-[#ffe642a6]   rounded-md   transition-all duration-75 ease-in "   href={solucion.link}>{solucion.metodo}</a>
+                            </div>
+                            <p class="text-gray-500 py-3 "> {solucion.explicacion}</p>
+                            {/* Codigo */}
+                            <pre ><code class="language-js">
+                                {solucion.codigo}
+                            </code></pre>
+                        </div>
+                    ))
+                }
+                
+            </div>         
+
+         </section>
+           
+    </section>
+))}
+
+<style>
+    .contanier-ejercicio {
+        content-visibility: auto;
+    }
+</style>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn-respuesta');
+    const solutions = document.querySelectorAll('.container-solucion');
+
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            solutions[index].classList.toggle('hidden');
+        });
+    });
+
+    
+});
+
+</script>
+   
+
+
+
+

@@ -1,0 +1,12 @@
+---
+import IconArrowLeft from "../../assets/IconArrowLeft.astro";
+const { texto } = Astro.props;
+---
+
+<a
+  href="/"
+  class=" inline-flex items-center  mr-auto  gap-x-2 text-sm text-gray-400    hover:text-yellow-400  group "
+>
+  <IconArrowLeft SvgStyle={"size-3 group-hover:text-yellow-400 group-hover:-translate-x-1 transition-transform ease-in duration-150"} />
+  {texto}
+</a>

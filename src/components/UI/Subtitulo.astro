@@ -1,0 +1,32 @@
+---
+const subtitleStyle ="text-xl font-bold mb-3 uppercase pb-4"
+const abilities = ["Resolución", "Lógica", "Optimización", "Estructuras"];
+const concepts = ["Condicionales", "Funciones", "Bucles", "Arrays y objetos"];
+
+
+---
+
+<article class="grid grid-cols-1 lg:grid-cols-2 items-center text-center gap-5 my-4 cursor-default">
+    <div class="skills-container">
+      <h4 class={subtitleStyle}>Habilidades</h4>
+      <ul class=" w-96 flex flex-wrap justify-center gap-8  mx-auto  ">
+         {
+          abilities.map((ability) => (
+            <li class="w-44 px-5 py-2 bg-orange-400 text-white  font-semibold rounded-md ">{ability}</li>
+          ))
+         }
+      </ul>
+    </div>
+    
+    <div class="concepts-container">
+      <h4 class={subtitleStyle}>Conceptos</h4>
+      <ul class=" w-96 flex flex-wrap justify-center gap-8  mx-auto ">
+       {
+          concepts.map((concept) => (
+            <li class="w-44 px-5 py-2 bg-[#34d399] text-white  font-semibold rounded-md">{concept}</li>
+          ))
+       }
+      </ul>
+    </div>
+  </article>
+  

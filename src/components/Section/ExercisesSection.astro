@@ -1,0 +1,13 @@
+---
+import ExerciseCard from "../exercises/ExerciseCard.astro";
+import Dificultad from "./dificultad.astro";
+import TituloUI from "../UI/TituloUI.astro";
+import BackToHome from "../UI/BackToHome.astro";
+---
+
+<section class="flex justify-center flex-col gap-9">
+    <TituloUI title={"Ejercicios"} />
+    <BackToHome  texto={"regresar"}/>
+  <!-- <Dificultad /> -->
+  <ExerciseCard />
+</section>

@@ -1,0 +1,25 @@
+---
+import IconGithub from "../../assets/IconGithub.astro";
+import "../../styles/banner-github-link.css";
+---
+
+<nav class="flex justify-center lg:justify-end">
+  <ul>
+    <li>
+      <a
+        class="relative shadow-2xl"
+        href="https://github.com/z6nc/EjerciciosWebJS"
+        target="_blank"
+        aria-label="Ir a mi GitHub"
+      >
+        <div
+          id="ContenedorGit"
+          class="relative flex gap-2 transform ease-in-out duration-100 hover:scale-110"
+        >
+          <IconGithub />
+          <span id="icon-btn-github" class="bg-[#f3f4f6]"> </span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</nav>

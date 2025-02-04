@@ -1,10 +1,9 @@
 
-
 export const ObjetoPractica = [
     {
         id: 1,
-    
         nombre: "Contraseña Válida",
+        categoria : "Ejercicios",
         dificultad: "Facil",
         NumeroEjercicio: "Ejercicio 01",
         NombreFuncion: "contraseñaValida",
@@ -68,18 +67,19 @@ export const ObjetoPractica = [
     },
     
     {
-        "id": 2,
-        "nombre": "Número Par",
-        "dificultad": "Facil",
-        "NumeroEjercicio": "Ejercicio 02",
-        "NombreFuncion": "numeroPar",
-        "descripcion": "Escribir una función llamada numeroPar que reciba un número y retorne true si el número es par, o false si es impar.",
-        "restricciones": [
+        id: 2,
+        nombre: "Número Par",
+        categoria : "Ejercicios",
+        dificultad: "Facil",
+        NumeroEjercicio: "Ejercicio 02",
+        NombreFuncion: "numeroPar",
+        descripcion: "Escribir una función llamada numeroPar que reciba un número y retorne true si el número es par, o false si es impar.",
+        restricciones: [
             "La función debe llamarse numeroPar.",
             "La función debe recibir un número como argumento.",
             "Retorna true si el número es par, de lo contrario retorna false."
         ],
-        "soluciones": [
+        soluciones: [
             {
                 "forma": "1) Primera Solucion",
                 "explicacion": "En esta solución utilizamos el operador módulo (%) para verificar si el número es divisible entre 2, lo que indica que es par.",
@@ -131,6 +131,7 @@ export const ObjetoPractica = [
     {
         "id": 3,
         "nombre": "Suma de Números",
+        categoria : "Ejercicios",
         "dificultad": "Facil",
         "NumeroEjercicio": "Ejercicio 03",
         "NombreFuncion": "sumaNumeros",
@@ -154,7 +155,7 @@ export const ObjetoPractica = [
             },
          
             {
-                "forma": "3) Tercera Solucion",
+                "forma": "2) Segunda Solucion",
                 "explicacion": "En esta solución utilizamos el método forEach() para recorrer el array y acumular la suma de los elementos.",
                 "metodo": "Método forEach()",
                 "link": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach",
@@ -182,6 +183,7 @@ export const ObjetoPractica = [
     {
         "id": 4,
         "nombre": "Filtrar Palabras Largas",
+        categoria : "Ejercicios",
         "dificultad": "Intermedio",
         "NumeroEjercicio": "Ejercicio 04",
         "NombreFuncion": "filtrarPalabrasLargas",
@@ -235,6 +237,7 @@ export const ObjetoPractica = [
     {
         "id": 5,
         "nombre": "Contar Ocurrencias de un Elemento",
+        categoria : "Ejercicios",
         "dificultad": "Intermedio",
         "NumeroEjercicio": "Ejercicio 05",
         "NombreFuncion": "contarOcurrencias",
@@ -258,7 +261,7 @@ export const ObjetoPractica = [
             },
          
             {
-                "forma": "3) Tercera Solucion",
+                "forma": "2) Segunda Solucion",
                 "explicacion": "En esta solución utilizamos el método forEach() para iterar sobre el array y contar las ocurrencias del elemento incrementando un contador cuando se encuentra una coincidencia.",
                 "metodo": "Método forEach()",
                 "link": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach",
@@ -288,6 +291,7 @@ export const ObjetoPractica = [
     {
         "id": 6,
         "nombre": "Invertir un String",
+        categoria : "Ejercicios",
         "dificultad": "Intermedio",
         "NumeroEjercicio": "Ejercicio 06",
         "NombreFuncion": "invertirString",
@@ -349,6 +353,7 @@ export const ObjetoPractica = [
     {
         "id": 7,
         "nombre": "Ordenar un Array de Objetos por Múltiples Criterios",
+        categoria : "Ejercicios",
         "dificultad": "Dificil",
         "NumeroEjercicio": "Ejercicio 07",
         "NombreFuncion": "ordenarPorMultiplesCriterios",
@@ -430,6 +435,7 @@ export const ObjetoPractica = [
     {
         "id": 8,
         "nombre": "Generar Permutaciones de un String",
+         categoria : "Ejercicios",
         "dificultad": "Dificil",
         "NumeroEjercicio": "Ejercicio 08",
         "NombreFuncion": "generarPermutaciones",
@@ -521,6 +527,7 @@ export const ObjetoPractica = [
     {
         "id": 9,
         "nombre": "Encontrar la Subcadena Más Larga sin Repetición de Caracteres",
+        categoria : "Ejercicios",
         "dificultad": "Dificil",
         "NumeroEjercicio": "Ejercicio 09",
         "NombreFuncion": "subcadenaSinRepetidos",
@@ -617,7 +624,143 @@ export const ObjetoPractica = [
             console.log(subcadenaSinRepetidos("")) 
             // 0
         `
-    }
+    },
+    {
+        "id": 10,
+        "nombre": "Encontrar el Número Más Grande en un Array",
+        "categoria": "Pruebas Tecnica",
+        "dificultad": "Facil",
+        "NumeroEjercicio": "Prueba Tecnica 01",
+        "NombreFuncion": "numeroMasGrande",
+        "descripcion": "Escribir una función llamada numeroMasGrande que reciba un array de números y retorne el número más grande.",
+        "restricciones": [
+            "La función debe llamarse numeroMasGrande.",
+            "La función debe recibir un array de números como argumento.",
+            "Debe retornar el número más grande en el array.",
+            "No se permite el uso de Math.max con spread (...)."
+        ],
+        "soluciones": [
+            {
+                "forma": "1) Solución Iterativa",
+                "explicacion": "Recorremos el array con un bucle y almacenamos el número más grande encontrado hasta el momento.",
+                "metodo": "Bucle for",
+                "link": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                "codigo": `
+                    function numeroMasGrande(arr) {
+                        if (arr.length === 0) return null; // Manejo de array vacío
+                        
+                        let max = arr[0];
+                        for (let i = 1; i < arr.length; i++) {
+                            if (arr[i] > max) {
+                                max = arr[i];
+                            }
+                        }
+                        return max;
+                    }
+                `
+            },
+            {
+                "forma": "2) Solución con Reduce",
+                "explicacion": "Utilizamos el método reduce() para recorrer el array y encontrar el máximo en una sola operación.",
+                "metodo": "Método reduce()",
+                "link": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce",
+                "codigo": `
+                    function numeroMasGrande(arr) {
+                        if (arr.length === 0) return null; // Manejo de array vacío
+                        return arr.reduce((max, num) => num > max ? num : max, arr[0]);
+                    }
+                `
+            }
+        ],
+        "CasosPrueba": `
+            function numeroMasGrande(arr)
+    
+            // Datos de prueba
+            console.log(numeroMasGrande([3, 1, 7, 9, 2])); 
+            // 9
+            
+            console.log(numeroMasGrande([-5, -2, -10, -1])); 
+            // -1
+            
+            console.log(numeroMasGrande([10])); 
+            // 10
+            
+            console.log(numeroMasGrande([])); 
+            // null
+        `
+    },
+    {
+        "id": 11,
+        "nombre": "Calcular el Total de Ventas con Descuento",
+        "categoria": "Pruebas Tecnica",
+        "dificultad": "Facil",
+        "NumeroEjercicio": "Prueba Tecnica 02",
+        "NombreFuncion": "calcularTotalConDescuento",
+        "descripcion": "Escribir una función llamada calcularTotalConDescuento que reciba un array de objetos representando productos, donde cada objeto tiene el nombre del producto, su precio y un descuento aplicado. La función debe retornar el total de las ventas con el descuento aplicado.",
+        "restricciones": [
+            "La función debe llamarse calcularTotalConDescuento.",
+            "La función debe recibir un array de objetos, donde cada objeto tiene las propiedades 'precio' y 'descuento'.",
+            "Cada descuento debe ser aplicado como porcentaje sobre el precio del producto.",
+            "El valor del descuento nunca será mayor a 50%."
+        ],
+        "soluciones": [
+            {
+                "forma": "1) Solución Iterativa",
+                "explicacion": "Recorremos el array de productos y vamos sumando el precio de cada producto después de aplicar el descuento.",
+                "metodo": "Bucle for",
+                "link": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for",
+                "codigo": `
+                    function calcularTotalConDescuento(productos) {
+                        let total = 0;
+                        for (let i = 0; i < productos.length; i++) {
+                            const { precio, descuento } = productos[i];
+                            const precioConDescuento = precio - (precio * descuento / 100);
+                            total += precioConDescuento;
+                        }
+                        return total;
+                    }
+                `
+            },
+            {
+                "forma": "2) Solución con Reduce",
+                "explicacion": "Utilizamos el método reduce() para sumar el precio de los productos después de aplicar el descuento.",
+                "metodo": "Método reduce()",
+                "link": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce",
+                "codigo": `
+                    function calcularTotalConDescuento(productos) {
+                        return productos.reduce((total, { precio, descuento }) => {
+                            const precioConDescuento = precio - (precio * descuento / 100);
+                            return total + precioConDescuento;
+                        }, 0);
+                    }
+                `
+            }
+        ],
+        "CasosPrueba": `
+            function calcularTotalConDescuento(productos)
+    
+            // Datos de prueba
+            console.log(calcularTotalConDescuento([
+                { precio: 100, descuento: 10 },
+                { precio: 200, descuento: 20 }
+            ])); 
+            // 240 (100 - 10% + 200 - 20%)
+            
+            console.log(calcularTotalConDescuento([
+                { precio: 50, descuento: 5 }
+            ])); 
+            // 47.5 (50 - 5%)
+            
+            console.log(calcularTotalConDescuento([
+                { precio: 300, descuento: 50 }
+            ])); 
+            // 150 (300 - 50%)
+            
+            console.log(calcularTotalConDescuento([])); 
+            // 0
+        `
+    },
+    
     
     
     

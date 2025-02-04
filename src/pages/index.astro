@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import IntroExercises from '../components/Section/IntroExercises.astro';
 import Subtitulo from '../components/UI/Subtitulo.astro';
 import Boton from '../components/UI/Boton.astro'
+import { ObjetoPractica } from '../data/ObjetoPractica';
+
+const CategoriasUnicas = [...new Set(ObjetoPractica.map(practica => practica.categoria))]
 
 ---
 
@@ -13,10 +16,14 @@ import Boton from '../components/UI/Boton.astro'
 		<section class="flex flex-col justify-center gap-12 my-9">
 			<IntroExercises />
 			<Subtitulo />
-
+              
 			 <div class=" flex flex-wrap gap-5 justify-center">
-				<Boton  texto="Ejercicios js"  link={"/Ejercicios"}/>
-				<Boton  texto="Pruebas Tecnicas" link={"/404"} />
+				{
+					CategoriasUnicas.map((practica) => (
+						<Boton  texto={practica} link={`/Ejercicios?categoria=${practica}`} />
+					))
+				}
+				
 			 </div>
 
 		</section>

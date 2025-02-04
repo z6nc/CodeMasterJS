@@ -67,6 +67,7 @@ export function ExerciseCard() {
           <button
             onClick={() => togglePregunta(index)}
             className="flex items-center justify-between px-4 w-full py-2 rounded-xl cursor-pointer bg-[#ffe642a6] hover:bg-[#ffe642]"
+            aria-label="Abrir soluciones "
           >
             <p className="text-black font-bold">Solución</p>
             <span

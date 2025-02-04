@@ -1,55 +1,24 @@
-# Astro Starter Kit: Basics
+CodeMaster Js
+CodeMaster Js es una plataforma interactiva diseñada para practicar JavaScript a través de ejercicios y pruebas técnicas de diferentes niveles de dificultad. Este proyecto está dirigido a desarrolladores que buscan mejorar sus habilidades en JavaScript y enfrentarse a retos técnicos a medida que avanzan.
 
-```sh
-npm create astro@latest -- --template basics
-```
+Características
+Pruebas Técnicas: Ejercicios que simulan situaciones de la vida real en el desarrollo de software, con desafíos para diferentes niveles de habilidad.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Ejercicios por Nivel:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Básico: Enfoque en los fundamentos del lenguaje, estructuras de control, variables, y funciones.
+Intermedio: Retos que incluyen manipulación de arrays, objetos, algoritmos básicos y funciones avanzadas.
+Difícil: Problemas más complejos que implican optimización, estructuras de datos avanzadas y patrones de diseño.
+Interactividad: Los usuarios pueden resolver ejercicios y ver soluciones detalladas para mejorar su comprensión de cada concepto.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Seguimiento de Progreso: Los usuarios pueden revisar su desempeño, ver el historial de intentos y acceder a soluciones explicadas.
 
-## 🚀 Project Structure
+Estructura del Proyecto
+/src: Código fuente de la aplicación. Aquí se encuentran los componentes React y las funciones de backend.
+/public: Archivos públicos como imágenes y fuentes.
+/assets: Contiene los recursos estáticos como iconos y estilos.
+/data: Contiene los ejercicios, categorías y soluciones que alimentan la plataforma.
 
-Inside of your Astro project, you'll see the following folders and files:
+Licencia
+Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo LICENSE.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-# EjerciciosWebJS

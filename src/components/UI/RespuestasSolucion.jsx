@@ -1,7 +1,7 @@
 import { InfoCode } from "./InfoCode";
 export function RespuestasSolucion({ solucion }) {
   return (
-    <section className="">
+       <section className="min-h-[100px] overflow-hidden  ">
       <div className="flex flex-col gap-y-6">
         {solucion.soluciones.map((soluciones, index) => (
           <div

@@ -80,7 +80,7 @@ export function ExerciseCard() {
           </button>
 
           {/* Mostrar la solución si está activa */}
-          {activeIndex === index && <RespuestasSolucion solucion={solucion} />}
+          {activeIndex === index && <RespuestasSolucion solucion={solucion}  />}
         </section>
       ))}
     </>

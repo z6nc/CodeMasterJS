@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
 import { IconArrow } from "../../assets/IconArrow.jsx";
 import { ObjetoPractica } from "../../data/ObjetoPractica.js";
 import { ExerciseHeader } from "../UI/ExerciseHeader.jsx";
 import { InfoCode } from "../UI/InfoCode.jsx";
 import { RespuestasSolucion } from "../UI/RespuestasSolucion.jsx";
 import { Restricciones } from "../UI/Restricciones.jsx";
-import { useEffect, useState } from "react";
+import { Loading } from "../UI/Loading.jsx";
 
 export function ExerciseCard() {
   const [ejercicio, setEjercicio] = useState([]);
@@ -43,7 +44,7 @@ export function ExerciseCard() {
   };
 
   if (loading) {
-    return <p>Buscando producto...</p>;
+    return <Loading />;
   }
 
   if (ejercicio.length === 0) {
@@ -53,11 +54,11 @@ export function ExerciseCard() {
   
 
   return (
-    <>
+    <section className="min-h-screen transition-opacity duration-300 ease-in-out">
       {ejercicio.map((solucion, index) => (
-        <section
+        <article
           key={solucion.id}
-          className="relative flex flex-col gap-3 py-7 px-7 mb-8 bg-white border border-[#f5f5f5] rounded shadow-sm bg-gradient-to-bl"
+          className="relative flex flex-col gap-3 py-7 px-7 mb-8  bg-white border border-[#f5f5f5] rounded shadow-sm opacity-100 "
         >
           <ExerciseHeader ListaSolucion={solucion} />
           <Restricciones restriccion={solucion.restricciones} />
@@ -81,8 +82,8 @@ export function ExerciseCard() {
 
           {/* Mostrar la solución si está activa */}
           {activeIndex === index && <RespuestasSolucion solucion={solucion}  />}
-        </section>
+        </article>
       ))}
-    </>
+    </section>
   );
 }

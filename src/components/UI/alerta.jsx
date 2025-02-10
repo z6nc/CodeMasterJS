@@ -1,7 +1,7 @@
 export function Alerta() {
   return (
     <div
-      class="flex items-center p-4 mb-4 text-sm  rounded-lg bg-yellow-50  text-yellow-400  shadow-md"
+    className="flex items-center p-4 mb-4 text-sm  rounded-lg bg-yellow-50  text-yellow-400  shadow-md"
       role="alert"
     >
       <svg

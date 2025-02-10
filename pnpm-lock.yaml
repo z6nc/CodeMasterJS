@@ -26,6 +26,9 @@ importers:
       astro:
         specifier: ^4.16.18
         version: 4.16.18(rollup@4.32.1)(typescript@5.5.4)
+      canvas-confetti:
+        specifier: 1.9.3
+        version: 1.9.3
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -915,6 +918,9 @@ packages:
 
   caniuse-lite@1.0.30001696:
     resolution: {integrity: sha512-pDCPkvzfa39ehJtJ+OwGT/2yvT2SbjfHhiIW2LWOAcMQ7BzwxT/XuyUp4OTOd0XFWA6BKw0JalnBHgSi5DGJBQ==}
+
+  canvas-confetti@1.9.3:
+    resolution: {integrity: sha512-rFfTURMvmVEX1gyXFgn5QMn81bYk70qa0HLzcIOSVEyl57n6o9ItHeBtUSWdvKAPY0xlvBHno4/v3QPrT83q9g==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -3004,6 +3010,8 @@ snapshots:
   caniuse-lite@1.0.30001653: {}
 
   caniuse-lite@1.0.30001696: {}
+
+  canvas-confetti@1.9.3: {}
 
   ccount@2.0.1: {}
 

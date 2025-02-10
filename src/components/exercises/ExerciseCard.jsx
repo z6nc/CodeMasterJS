@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { IconArrow } from "../../assets/IconArrow.jsx";
 import { ObjetoPractica } from "../../data/ObjetoPractica.js";
+import { Alerta } from "../UI/alerta.jsx";
 import { ExerciseHeader } from "../UI/ExerciseHeader.jsx";
 import { InfoCode } from "../UI/InfoCode.jsx";
 import { RespuestasSolucion } from "../UI/RespuestasSolucion.jsx";
@@ -12,6 +13,11 @@ export function ExerciseCard() {
   const [loading, setLoading] = useState(true); // Estado de cargando
   const [activeIndex, setActiveIndex] = useState(null);
   
+  const dificultad = {
+    Facil: "border-green-500 ",
+    Intermedio: "border-orange-400",
+    Dificil: "border-red-400",
+  };
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -55,12 +61,15 @@ export function ExerciseCard() {
 
   return (
     <section className="min-h-screen transition-opacity duration-300 ease-in-out">
+      <Alerta />
       {ejercicio.map((solucion, index) => (
         <article
           key={solucion.id}
-          className="relative flex flex-col gap-3 py-7 px-7 mb-8  bg-white border border-[#f5f5f5] rounded shadow-sm opacity-100 "
+          className={`flex flex-col gap-3 py-7 px-7 mb-8  bg-white  rounded shadow-sm opacity-100 border-l-4  ${
+            dificultad[solucion.dificultad]
+          }`}
         >
-          <ExerciseHeader ListaSolucion={solucion} />
+          <ExerciseHeader ListaSolucion={solucion} indice={solucion.id}/>
           <Restricciones restriccion={solucion.restricciones} />
           <InfoCode codigo={solucion.CasosPrueba} />
 
